@@ -1,6 +1,6 @@
 package models;
 
-public class Compras {
+public class Compras implements Comparable<Compras> {
 
     private String descricao;
     private double valor;
@@ -24,5 +24,10 @@ public class Compras {
                 "descricao ='" + descricao + '\'' +
                 ", valor =" + valor +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Compras novaCompra) {
+        return Double.valueOf(this.valor).compareTo(Double.valueOf(novaCompra.valor));
     }
 }
